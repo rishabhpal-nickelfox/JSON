@@ -184,7 +184,11 @@ const data = {
     ],
   },
 };
+const port = 3001;
 
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 // API Route
 app.get("/test", (req, res) => {
   res.status(200).json(data.data);
