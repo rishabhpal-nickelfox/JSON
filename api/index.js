@@ -1,17 +1,7 @@
 import express from "express";
 
 const app = express();
-
-const port = 3001;
 app.use(express.json());
-
-app.get("/test", (req, res) => {
-  res.status(200).send(data.data);
-});
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
 
 const data = {
   data: {
@@ -194,3 +184,11 @@ const data = {
     ],
   },
 };
+
+// API Route
+app.get("/test", (req, res) => {
+  res.status(200).json(data.data);
+});
+
+// Export for Vercel
+export default app;
